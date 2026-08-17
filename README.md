@@ -1,6 +1,6 @@
 # GAIverse.in — v8
 
-Updated portfolio for Ankita Taneja.
+Updated portfolio for Ankita Taneja. (Soon to be launched)
 
 ## Included
 - GAIverse brand wordmark and brand palette from the supplied logo concept.
