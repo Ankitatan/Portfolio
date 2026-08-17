@@ -3,7 +3,7 @@ GAIverse — Ankita Taneja's portfolio showcasing data analytics, business intel
 
 # GAIverse.in — Personal Data & AI Portfolio
 
-![GAIverse](gaiverse-wordmark.png)
+<img width="2653" height="1336" alt="Screenshot 2026-08-17 054656" src="https://github.com/user-attachments/assets/d6c740de-9640-4810-a7db-0e9d4a2e99b0" />
 
 ## Overview
 
