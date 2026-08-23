@@ -331,3 +331,20 @@ document.addEventListener("DOMContentLoaded", () => {
     startProjectAuto();
   }
 });
+
+const GITHUB_USERNAME = "Ankitatan";
+
+const projects = [
+  {
+    slug: "equity-research-tool", // <-- ONLY the repo name here!
+    title: "Equity Research News Summarizer",
+    description: "Automated news summarization and financial insights pipeline leveraging LLMs and Streamlit.",
+    tags: ["Generative AI", "LangChain", "Streamlit", "Python"]
+  },
+  {
+    slug: "model-optimization-app", // <-- another repo name from your GitHub
+    title: "Predictive Classification & Model Optimization",
+    description: "Multi-class classification pipeline comparing ensemble models with hyperparameter tuning.",
+    tags: ["Machine Learning", "Scikit-Learn", "EDA", "Python"]
+  }
+];
