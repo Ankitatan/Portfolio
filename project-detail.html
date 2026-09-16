@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Documentation | Ankita Taneja - GAIverse</title>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <!-- Marked.js to parse Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Highlight.js for code snippet highlighting inside README -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="projects.html" class="text-sm font-medium text-slate-400 hover:text-cyan-400 transition flex items-center gap-2">
+        &larr; Back to All Projects
+      </a>
+      <a id="btn-github" href="#" target="_blank" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition">
+        View on GitHub ↗
+      </a>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <!-- Breadcrumb / Header -->
+    <div class="mb-8">
+      <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Documentation & Case Study</span>
+      <h1 id="page-title" class="text-3xl font-extrabold text-white mt-1">Loading Project...</h1>
+    </div>
+
+    <!-- Rendered Markdown Container -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+      <article id="readme-container" class="prose prose-invert prose-cyan max-w-none prose-pre:bg-slate-950 prose-pre:border prose-pre:border-slate-800">
+        <p class="text-slate-400 animate-pulse font-mono">Fetching latest README from GitHub repository...</p>
+      </article>
+    </div>
+  </main>
+
+  <script>
+    const GITHUB_USERNAME = "your-github-https://github.com/Ankitatan"; // <-- Replace with your GitHub handle
+    const params = new URLSearchParams(window.location.search);
+    const repo = params.get('repo');
+    const title = params.get('title');
+
+    if (title) document.getElementById('page-title').innerText = decodeURIComponent(title);
+
+    if (repo) {
+      const githubUrl = `https://github.com/${GITHUB_USERNAME}/${repo}`;
+      document.getElementById('btn-github').href = githubUrl;
+
+      // Configure marked with syntax highlighting
+      marked.setOptions({
+        highlight: function(code, lang) {
+          const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+          return hljs.highlight(code, { language }).value;
+        }
+      });
+
+      // Fetch README from GitHub (checks 'main', then falls back to 'master')
+      fetch(`https://raw.githubusercontent.com/${GITHUB_USERNAME}/${repo}/main/README.md`)
+        .then(res => {
+          if (!res.ok) throw new Error("Not in main, checking master...");
+          return res.text();
+        })
+        .catch(() => fetch(`https://raw.githubusercontent.com/${GITHUB_USERNAME}/${repo}/master/README.md`).then(r => r.text()))
+        .then(markdown => {
+          document.getElementById('readme-container').innerHTML = marked.parse(markdown);
+        })
+        .catch(err => {
+          document.getElementById('readme-container').innerHTML = `
+            <div class="text-center py-12">
+              <p class="text-amber-400 font-semibold">Unable to automatically load README for "${repo}".</p>
+              <p class="text-slate-400 text-sm mt-2">Ensure the repository is public and has a README.md file.</p>
+              <a href="${githubUrl}" target="_blank" class="inline-block mt-4 text-cyan-400 underline">Open Repository Directly &rarr;</a>
+            </div>
+          `;
+        });
+    } else {
+      document.getElementById('readme-container').innerHTML = "<p class='text-red-400'>No project specified in URL query.</p>";
+    }
+  </script>
+</body>
+</html>
