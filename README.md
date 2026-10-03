@@ -29,28 +29,20 @@
 
 ## 👩‍💻 About Me
 
-I am a Data Science and AI/ML professional focused on transforming data into actionable insights and intelligent applications.
+I am a Data Science and AI/ML professional focused on transforming data into actionable insights, predictive models, dashboards, and intelligent applications.
 
 My work spans:
 
-- 📊 Data Analytics & Business Intelligence
-- 🤖 Machine Learning
-- 🧠 Generative AI & LLM Applications
-- 🐍 Python & SQL
-- 📈 Power BI & Data Visualization
-- 🔎 Exploratory Data Analysis
-- ⚙️ Feature Engineering & Model Evaluation
-- 🚀 Streamlit-based Data Applications
+* 📊 Data Analytics & Business Intelligence
+* 🤖 Machine Learning
+* 🧠 Generative AI & LLM Applications
+* 🐍 Python & SQL
+* 📈 Power BI & Data Visualization
+* 🔎 Exploratory Data Analysis
+* ⚙️ Feature Engineering & Model Evaluation
+* 🚀 Streamlit-based Data Applications
 
 Currently pursuing an **M.Sc. in Data Science from IIIT Bangalore & Liverpool John Moores University**.
-
-# 👋 Hi, I'm Ankita Taneja
-
-### AI/ML | Data Science | Python | GenAI
-
-I build practical **Data Science, Machine Learning and AI applications** using Python, SQL and modern AI technologies.
-
-My projects focus on turning data into **analytics, predictions, dashboards and intelligent applications**.
 
 ---
 
@@ -60,9 +52,9 @@ My projects focus on turning data into **analytics, predictions, dashboards and 
 
 AI-powered luxury gifting and e-commerce application.
 
-**Python • Streamlit • Machine Learning • AI**
+**Tech:** Python • Streamlit • Machine Learning • AI
 
-→ [View Project](https://github.com/Ankitatan)
+→ [View Portfolio](https://gaiverse.in)
 
 ---
 
@@ -70,9 +62,7 @@ AI-powered luxury gifting and e-commerce application.
 
 Machine learning application for flight price prediction and passenger satisfaction analysis.
 
-**Python • Pandas • Scikit-learn • Streamlit**
-
-→ [View Project](https://github.com/Ankitatan)
+**Tech:** Python • Pandas • Scikit-learn • Streamlit
 
 ---
 
@@ -80,9 +70,7 @@ Machine learning application for flight price prediction and passenger satisfact
 
 End-to-end expense analytics application using Python, SQL and Streamlit.
 
-**Python • SQL • Pandas • Streamlit**
-
-→ [View Project](https://github.com/Ankitatan)
+**Tech:** Python • SQL • Pandas • Streamlit
 
 ---
 
@@ -90,25 +78,30 @@ End-to-end expense analytics application using Python, SQL and Streamlit.
 
 SQL-based analysis of user activity, engagement and business metrics.
 
-**SQL • MySQL • Data Analytics**
+**Tech:** SQL • MySQL • Data Analytics
 
 ---
 
 ## 🛠️ Technical Skills
 
-**Languages**
+### Languages
+
 Python • SQL
 
-**Data Science**
+### Data Science
+
 Pandas • NumPy • Scikit-learn • EDA • Feature Engineering • Model Evaluation
 
-**Analytics**
+### Analytics & BI
+
 Power BI • Tableau • Excel • Data Visualization
 
-**AI**
-Machine Learning • GenAI • LLM Applications • RAG • Prompt Engineering
+### AI
 
-**Development**
+Machine Learning • Generative AI • LLM Applications • RAG • Prompt Engineering
+
+### Development
+
 Streamlit • Git • GitHub
 
 ---
@@ -140,16 +133,6 @@ Production AI Applications
 
 ---
 
-## 🤝 Connect With Me
-
-💼 LinkedIn:
-https://www.linkedin.com/in/ankita-t-390613396/
-
-💻 GitHub:
-https://github.com/Ankitatan
-
----
-
 ## 🌐 GAIverse Portfolio
 
 **GAIverse** is my personal data, analytics and AI portfolio showcasing projects across:
@@ -168,6 +151,16 @@ Generative AI
 Business Intelligence
  ↓
 Interactive Applications
+```
 
-[🌐 Visit My Portfolio](https://ankitatan.github.io/Portfolio/)
+🌐 **[Visit GAIverse](https://gaiverse.in)**
 
+---
+
+## 🤝 Connect With Me
+
+💼 [LinkedIn](https://www.linkedin.com/in/ankita-t-390613396/)
+
+💻 [GitHub](https://github.com/Ankitatan)
+
+🌐 [GAIverse](https://gaiverse.in)
