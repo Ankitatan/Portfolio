@@ -140,6 +140,69 @@ Production AI Applications
 
 ---
 
+## 📖 Documentation
+
+### About This Repository
+
+This repository contains the source files and documentation for **GAIverse**, my personal portfolio focused on Data Science, Analytics, Machine Learning, and Generative AI.
+
+### Portfolio Areas
+
+The projects and resources in this repository cover:
+
+* 📊 Data Analytics and Business Intelligence
+* 🐍 Python-based Data Science
+* 🗄️ SQL and Database Analytics
+* 🤖 Machine Learning
+* 🧠 Generative AI and LLM Applications
+* 📈 Power BI and Data Visualization
+* 🚀 Interactive Streamlit Applications
+
+### Project Workflow
+
+My projects generally follow a data-to-application workflow:
+
+```text
+Data Collection
+      ↓
+Data Cleaning & Validation
+      ↓
+Exploratory Data Analysis
+      ↓
+Feature Engineering
+      ↓
+Analytics / Machine Learning
+      ↓
+Model Evaluation
+      ↓
+Visualization / Application
+      ↓
+Business Insights
+```
+
+### How to Explore
+
+Each project can be explored through its corresponding repository, documentation, source code, datasets, and application where available.
+
+For the complete portfolio and project showcase:
+
+🌐 **[Visit GAIverse](https://gaiverse.in)**
+
+### Technology Stack
+
+| Area             | Technologies                           |
+| ---------------- | -------------------------------------- |
+| Programming      | Python, SQL                            |
+| Data Analysis    | Pandas, NumPy                          |
+| Machine Learning | Scikit-learn                           |
+| Visualization    | Matplotlib, Seaborn, Power BI, Tableau |
+| Applications     | Streamlit                              |
+| Databases        | MySQL                                  |
+| AI               | Generative AI, LLMs, RAG               |
+| Version Control  | Git, GitHub                            |
+
+---
+
 ## 🤝 Connect With Me
 
 💼 LinkedIn:
