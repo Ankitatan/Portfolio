@@ -536,19 +536,31 @@
 </script>
 
 
-<audio id="introAudio" autoplay preload="auto">
+
+<audio id="introAudio" preload="auto">
   <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
   Your browser does not support audio.
 </audio>
 
-<script>
-  window.addEventListener("load", function () {
-    const audio = document.getElementById("introAudio");
-    audio.volume = 1;
+<button id="playIntro" type="button">
+  🔊 Play my introduction
+</button>
 
-    audio.play().catch(function (error) {
-      console.log("Autoplay blocked:", error);
-    });
+<script>
+  const audio = document.getElementById("introAudio");
+  const playButton = document.getElementById("playIntro");
+
+  playButton.addEventListener("click", async function (event) {
+    event.stopPropagation();
+
+    try {
+      audio.currentTime = 0;
+      await audio.play();
+      playButton.textContent = "▶ Introduction playing...";
+    } catch (error) {
+      console.error("Audio playback failed:", error);
+      playButton.textContent = "Audio could not play. Please try again.";
+    }
   });
 </script>
 
