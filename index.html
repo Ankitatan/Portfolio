@@ -571,25 +571,36 @@
   <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
 </audio>
   
+<audio id="introAudio" preload="auto">
+  <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
+</audio>
+
+<button id="playIntro" type="button">🔊 Play Introduction</button>
+
 <script>
   const audio = document.getElementById("introAudio");
   const playButton = document.getElementById("playIntro");
 
-  playButton.addEventListener("click", async function (event) {
-    event.preventDefault();
+  playButton.addEventListener("click", async (event) => {
     event.stopPropagation();
+
+    if (!audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+      playButton.textContent = "🔊 Play Introduction";
+      return;
+    }
 
     try {
       await audio.play();
-      playButton.textContent = "🔊 Introduction playing";
+      playButton.textContent = "⏹ Stop Introduction";
     } catch (error) {
       console.error("Audio playback failed:", error);
-      playButton.textContent = "Playback failed — check Console";
     }
   });
 
-  audio.addEventListener("ended", function () {
-    playButton.textContent = "🔊 Play my introduction";
+  audio.addEventListener("ended", () => {
+    playButton.textContent = "🔊 Play Introduction";
   });
 </script>
 </body>
