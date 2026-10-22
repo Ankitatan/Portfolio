@@ -511,6 +511,46 @@
           <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
+
+      
+<!-- Introduction Audio -->
+<audio id="introAudio" preload="auto">
+  <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
+  Your browser does not support audio.
+</audio>
+
+<button id="playIntro" type="button">
+  🔊 Play my introduction
+</button>
+
+<script>
+  const audio = document.getElementById("introAudio");
+  const playButton = document.getElementById("playIntro");
+
+  playButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (audio.paused) {
+      try {
+        await audio.play();
+        playButton.textContent = "⏹ Stop my introduction";
+      } catch (error) {
+        console.error("Audio playback failed:", error);
+        playButton.textContent = "⚠️ Could not play audio";
+      }
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      playButton.textContent = "🔊 Play my introduction";
+    }
+  });
+
+  audio.addEventListener("ended", () => {
+    playButton.textContent = "🔊 Play my introduction";
+  });
+</script>
+      
     </section>
 
     <!-- Right Column: Professional Details & Bio -->
@@ -557,42 +597,5 @@
 
 
 
-<!-- Introduction Audio -->
-<audio id="introAudio" preload="auto">
-  <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
-  Your browser does not support audio.
-</audio>
-
-<button id="playIntro" type="button">
-  🔊 Play my introduction
-</button>
-
-<script>
-  const audio = document.getElementById("introAudio");
-  const playButton = document.getElementById("playIntro");
-
-  playButton.addEventListener("click", async (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (audio.paused) {
-      try {
-        await audio.play();
-        playButton.textContent = "⏹ Stop my introduction";
-      } catch (error) {
-        console.error("Audio playback failed:", error);
-        playButton.textContent = "⚠️ Could not play audio";
-      }
-    } else {
-      audio.pause();
-      audio.currentTime = 0;
-      playButton.textContent = "🔊 Play my introduction";
-    }
-  });
-
-  audio.addEventListener("ended", () => {
-    playButton.textContent = "🔊 Play my introduction";
-  });
-</script>
 </body>
 </html>
