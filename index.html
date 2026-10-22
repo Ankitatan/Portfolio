@@ -524,33 +524,31 @@
   <!-- ========================================================================
        04. Full-Page Click Redirect
        ======================================================================== -->
-  <script>
-    document.addEventListener("click", function (event) {
-      // Prevents redirect if user clicks on specific external links or buttons
-      if (event.target.closest("a") || event.target.closest("button")) {
-        return;
-      }
-      window.location.href = "mainpage.html";
-    });
-  </script>
-
   
-<audio id="introAudio" autoplay>
-  <source src="Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
+<script>
+  document.addEventListener("click", function (event) {
+    if (event.target.closest("a, button, audio")) {
+      return;
+    }
+
+    window.location.href = "mainpage.html";
+  });
+</script>
+
+
+<audio id="introAudio" autoplay preload="auto">
+  <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
+  Your browser does not support audio.
 </audio>
 
 <script>
-  window.addEventListener("load", async () => {
+  window.addEventListener("load", function () {
     const audio = document.getElementById("introAudio");
-
     audio.volume = 1;
-    audio.muted = false;
 
-    try {
-      await audio.play();
-    } catch (error) {
-      console.log("Autoplay blocked by browser. User interaction is required.");
-    }
+    audio.play().catch(function (error) {
+      console.log("Autoplay blocked:", error);
+    });
   });
 </script>
 
