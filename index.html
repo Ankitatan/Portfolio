@@ -557,6 +557,7 @@
 
 
 
+<!-- Introduction Audio -->
 <audio id="introAudio" preload="auto">
   <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
   Your browser does not support audio.
@@ -566,41 +567,31 @@
   🔊 Play my introduction
 </button>
 
-
-<audio id="introAudio" autoplay>
-  <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
-</audio>
-  
-<audio id="introAudio" preload="auto">
-  <source src="./Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
-</audio>
-
-<button id="playIntro" type="button">🔊 Play Introduction</button>
-
 <script>
   const audio = document.getElementById("introAudio");
   const playButton = document.getElementById("playIntro");
 
   playButton.addEventListener("click", async (event) => {
+    event.preventDefault();
     event.stopPropagation();
 
-    if (!audio.paused) {
+    if (audio.paused) {
+      try {
+        await audio.play();
+        playButton.textContent = "⏹ Stop my introduction";
+      } catch (error) {
+        console.error("Audio playback failed:", error);
+        playButton.textContent = "⚠️ Could not play audio";
+      }
+    } else {
       audio.pause();
       audio.currentTime = 0;
-      playButton.textContent = "🔊 Play Introduction";
-      return;
-    }
-
-    try {
-      await audio.play();
-      playButton.textContent = "⏹ Stop Introduction";
-    } catch (error) {
-      console.error("Audio playback failed:", error);
+      playButton.textContent = "🔊 Play my introduction";
     }
   });
 
   audio.addEventListener("ended", () => {
-    playButton.textContent = "🔊 Play Introduction";
+    playButton.textContent = "🔊 Play my introduction";
   });
 </script>
 </body>
