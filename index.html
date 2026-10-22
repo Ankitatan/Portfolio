@@ -566,21 +566,26 @@
   🔊 Play my introduction
 </button>
 
+
 <script>
   const audio = document.getElementById("introAudio");
   const playButton = document.getElementById("playIntro");
 
   playButton.addEventListener("click", async function (event) {
+    event.preventDefault();
     event.stopPropagation();
 
     try {
-      audio.currentTime = 0;
       await audio.play();
-      playButton.textContent = "▶ Introduction playing...";
+      playButton.textContent = "🔊 Introduction playing";
     } catch (error) {
       console.error("Audio playback failed:", error);
-      playButton.textContent = "Audio could not play. Please try again.";
+      playButton.textContent = "Playback failed — check Console";
     }
+  });
+
+  audio.addEventListener("ended", function () {
+    playButton.textContent = "🔊 Play my introduction";
   });
 </script>
 
