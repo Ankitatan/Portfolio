@@ -534,5 +534,25 @@
     });
   </script>
 
+  
+<audio id="introAudio" autoplay>
+  <source src="Hi%20I%20m%20Ankita%20Taneja.m4a" type="audio/mp4">
+</audio>
+
+<script>
+  window.addEventListener("load", async () => {
+    const audio = document.getElementById("introAudio");
+
+    audio.volume = 1;
+    audio.muted = false;
+
+    try {
+      await audio.play();
+    } catch (error) {
+      console.log("Autoplay blocked by browser. User interaction is required.");
+    }
+  });
+</script>
+
 </body>
 </html>
